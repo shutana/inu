@@ -1,0 +1,35 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.post_index-container {
+    height: 900px;
+    text-align: center;
+    padding-top: 200px;
+}
+
+.post-new-container {
+    text-align: center;
+    padding-top: 100px;
+    height: 900px;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+.posts-show {
+    text-align: center;
+    padding-top: 200px;
+    height: 800px;
+}
+
+.posts-show-item {
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    overflow: hidden;
+}
+
+.post-time {
+    text-align: right;
+}

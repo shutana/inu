@@ -9,6 +9,30 @@
   </head>
 
   <body>
+    <% if current_user.present? %>
+    　<header>
+        <div class="header-logo">
+          <%= link_to("I n U", posts_path, class: 'text-danger') %>
+        </div>
+        <ul class="header-menus">
+          <li>
+            <%= link_to(users_show_path) do %>
+              <span class="glyphicon glyphicon-user text-danger" aria-hidden="true" style="font-size: 20px"></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to(destroy_user_session_path, method: :delete) do %>
+              <span class="glyphicon glyphicon-log-out text-danger" aria-hidden="true" style="font-size: 20px"></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to(new_post_path) do %>
+              <span class="glyphicon glyphicon-pencil text-danger" aria-hidden="true" style="font-size: 20px"></span>
+            <% end %>
+          </li>
+        </ul>
+    　</header>
+    <% end %>
     <%= yield %>
   </body>
 </html>

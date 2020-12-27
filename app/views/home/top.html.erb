@@ -1,0 +1,15 @@
+
+<div class="home-container">
+  <div class="container">
+      <h1>I n U</h1>
+      <p>Keep memories for yourselves</p>
+        <div class="in-out-select">
+        　　<%= link_to('Create', new_user_registration_path, class: 'btn-cross') %>
+        　　<% if current_user.present? %>
+    　　　　　<%= link_to("ログアウト", destroy_user_session_path, class: 'btn btn-cross', method: :delete) %>
+        　　<% else %>
+        　 <%= link_to("Login", new_user_session_path, class: 'btn-cross') %>
+    　　    <% end %>
+        </div>
+  </div>
+</div>

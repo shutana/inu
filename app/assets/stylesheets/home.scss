@@ -1,0 +1,120 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.home-container {
+    height: 900px;
+    text-align: center;
+    padding-top: 320px;
+}
+
+.container h1{
+    font-size: 70px;
+    font-family: 'Caveat', cursive;   
+}
+
+.container p{
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
+}
+
+.btn-warning:hover {
+    background-color: red;
+}
+
+.registration-container {
+    height: 900px;
+}
+
+.container-right {
+    text-align: center;
+    padding-top: 150px;
+}
+
+.btn-success:hover {
+    background-color: green;
+}
+
+.login-container {
+    height: 900px;
+    text-align: center;
+    padding-top: 150px;
+}
+
+header {
+    height: 90px;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    background-color: pink;
+    position: fixed;
+    padding-top: 25px;
+    margin-top: -40px;
+}
+
+.header-logo {
+    float: left;
+    padding-left: 20px;
+    color: white;
+    font-size: 22px;
+    line-height: 64px;
+}
+
+.header-menus {
+    float: right;
+    padding-right: 20px;
+    list-style-type: none;
+}
+  
+.header-menus li {
+    float: left;
+    line-height: 64px;
+    font-size: 13px;
+    color: white;
+    padding-left: 15px;
+    padding-right: 20px;
+}
+
+.in-out-select {
+    font-family: 'Caveat', cursive;
+    font-size: 30px;   
+}
+
+.btn-cross {
+    display: inline-block;
+    position: relative;
+    padding: 0.15em 1.2em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    color: black;
+}
+
+.btn-cross:before, .btn-cross:after {
+    content: '';
+    position: absolute;
+    height: -webkit-calc(100% + 14px);
+    height: calc(100% + 14px);
+    top: -7px;
+    width: 2px;
+    background-color: black;
+    transition: .3s;
+}
+
+.btn-cross:before {
+    left: 12px;
+}
+
+.btn-cross:after {
+    right: 12px;
+}
+
+.btn-cross:hover:before {
+    top: 0px;
+    left: 0;
+    height: 100%;
+}
+
+.btn-cross:hover:after {
+    top: 0px;
+    right: 0;
+    height: 100%;
+}

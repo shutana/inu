@@ -1,0 +1,19 @@
+<div class="main posts-show">
+  <div class="container">
+    <div class="posts-show-item">
+      <%= @post.content %>
+      <%= image_tag @post.picture if @post.picture? %>
+      <div class="post-time">
+        <%= @post.created_at %>
+      </div>
+      <div class="pull-right">
+        <%= link_to(edit_post_path) do %>
+          <span class="glyphicon glyphicon-edit" aria-hidden="true" style="font-size: 14px"></span>
+        <% end %>
+        <%= link_to(post_path, method: :delete) do %>
+          <span class="glyphicon glyphicon-trash" aria-hidden="true" style="font-size: 14px"></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
