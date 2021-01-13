@@ -3,7 +3,6 @@
   <head>
     <title>Inu</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,6 +12,8 @@
     　<header>
         <div class="header-logo">
           <%= link_to("I n U", posts_path, class: 'text-danger') %>
+          <span class="header-user"><%= "#{current_user.male_name}" %></span>
+          <span class="header-date"><%= "Since #{current_user.dating_start_date}"%></span>
         </div>
         <ul class="header-menus">
           <li>

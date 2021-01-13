@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :correct_user, only: [:destroy]
 
     def index
       @posts = Post.all
@@ -8,6 +9,11 @@ class PostsController < ApplicationController
 
     def show
       @post = Post.find_by(id: params[:id])
+      @like = Like.new
+      @likes_count = Like.where(post_id: @post.id).count
+      @comment = Comment.new
+      @comments = @post.comments
+      @comments_count = Comment.where(post_id: @post.id).count
     end
     
     def new
@@ -36,5 +42,12 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:content, :title, :picture)
+    end
+
+    def correct_user
+      @post = current_user.posts.find_by(id: params[:id])
+      unless @post
+        redirect_to root_path
+      end
     end
 end

@@ -2,9 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .post_index-container {
+    li {
+        margin-top: 30px;
+        list-style-type: none;
+        background-color: pink;
+        padding: 20px;
+        width: 500px;
+        margin-left: 430px;  
+    }
     height: 900px;
     text-align: center;
-    padding-top: 200px;
+    padding-top: 100px;
 }
 
 .post-new-container {
@@ -20,7 +28,6 @@
 .posts-show {
     text-align: center;
     padding-top: 200px;
-    height: 800px;
 }
 
 .posts-show-item {
@@ -32,4 +39,14 @@
 
 .post-time {
     text-align: right;
+}
+
+.comment-container li {
+    list-style-type: none;
+    border-bottom: solid 0.8px red;
+    padding: 20px;
+}
+
+.comment-container { 
+    text-align: center;
 }

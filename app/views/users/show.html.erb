@@ -1,6 +1,9 @@
 <div class="user-show">
    <div class="container">
       <h1>Your Profile</h1>
-        <%= link_to("プロフィール編集", edit_user_registration_path, class: 'btn btn-success') %>
+      <p>名　前 : <%= current_user.male_name %></p>
+      <p>記念日 : <%= current_user.dating_start_date %></p>
+      <img src=<%= current_user.male_picture %> class = "icon_image">
+      <%= link_to("プロフィール編集", edit_user_registration_path, class: 'btn btn-success') %>
    </div>
 </div>

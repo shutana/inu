@@ -15,11 +15,16 @@
  */
 
 body {
-    background-image: url("washi-pattern-01.jpg");
-    background-repeat: no-repeat;
+    background-color: white;
     background-size: cover;
 }
 
 .header-logo {
     font-family: 'Caveat', cursive;
+    color: black;
+}
+
+.header-user {
+    margin: 0 30px;
+    color: black;
 }

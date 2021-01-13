@@ -1,7 +1,4 @@
 <div class="registration-container">
-  <div class="container-left">
-    <p>Welcome to I n U</p>
-  </div>
   <div class="container-right">
       <h2>Sign up</h2>
 
@@ -9,7 +6,7 @@
         <%= render "users/shared/error_messages", resource: resource %>
 
         <div class="form-group">
-          <%= f.label "Name1" %><br />
+          <%= f.label "あなたのお名前は？" %><br />
           <div class="row">
             <div class="col-md-6 col-md-offset-3">
               <%= f.text_field :male_name, autofocus: true, autocomplete: "male_name", class: 'form-control' %>
@@ -18,12 +15,21 @@
         </div>
 
         <div class="form-group">
-          <%= f.label :female_name %><br />
+          <%= f.label "あなたのパートナーのお名前は？" %><br />
           <div class="row">
             <div class="col-md-6 col-md-offset-3">
               <%= f.text_field :female_name, autofocus: true, autocomplete: "female_name", class: 'form-control' %>
             </div>
           </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label "交際開始日" %><br />
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <%= f.date_field :dating_start_date, autofocus: true, autocomplete: "dating_start_date", class: 'form-control' %>
+            </div>
+         </div>
         </div>
 
         <div class="form-group">
