@@ -1,0 +1,17 @@
+<%= form_for(@post) do |f| %>
+　<div class="field">
+    <%= f.label "Title" %><br />
+    <%= f.text_field :title, placeholder: "書いて！", class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Content" %><br />
+    <%= f.text_area :content, placeholder: "つぶやけ！", class: 'form-control' %>
+  </div>
+
+  <span class="picture">
+    <%= f.label "Picture" %>
+    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', placeholder: "何見せる？", class: 'form-control' %>
+  </span>
+  <%= f.submit "Post", class: "btn btn-success btn-lg" %>
+<% end %>

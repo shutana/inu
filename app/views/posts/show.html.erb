@@ -1,0 +1,54 @@
+<div class="main posts-show">
+  <div class="container">
+    <div class="posts-show-item">
+      <%= @post.content %>
+      <%= image_tag @post.picture if @post.picture? %>
+      <div class="post-time">
+        <%= @post.created_at %>
+        <br>
+        <span class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago</span>
+      </div>
+      <div class="pull-right">
+        <%= link_to(edit_post_path) do %>
+          <span class="glyphicon glyphicon-edit" aria-hidden="true" style="font-size: 14px"></span>
+        <% end %>
+        <% if current_user == @post.user %>
+          <%= link_to(post_path, method: :delete) do %>
+            <span class="glyphicon glyphicon-trash" aria-hidden="true" style="font-size: 14px"></span>
+          <% end %>
+        <% end %>
+        <%= render "likes/like" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="comment-container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <span class="glyphicon glyphicon-comment"></span>
+      <%= @comments_count %>
+      <h3 class="panel-title">All Comments</h3>
+    </div>
+  </div>
+  <% @comments.each do |comment| %>
+    <ul>
+      <li>
+        <%= comment.user.email %>
+        <br>
+        <%= comment.content %>
+        <br>
+        <% if current_user == comment.user %>
+          <%= link_to(post_comment_path(@post, comment), method: :delete) do %>
+            <span class="glyphicon glyphicon-trash" aria-hidden="true" style="font-size: 14px"></span>
+          <% end %>
+        <% end %>
+      </li>
+    </ul>
+  <% end %>
+  <%= form_for [@post, @comment] do |f| %>
+    <%= f.text_area :content, :size => "98x5", placeholder: 'コメントを書いてください' %>
+    <br>
+    <%= f.submit 'コメントする', class: 'btn btn-success' %>
+    <% end %>
+  <%= link_to "ホームへ戻る", posts_path %> 
+</div>

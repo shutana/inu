@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    background-color: white;
+    background-size: cover;
+}
+
+.header-logo {
+    font-family: 'Caveat', cursive;
+    color: black;
+}
+
+.header-user {
+    margin: 0 30px;
+    color: black;
+}
